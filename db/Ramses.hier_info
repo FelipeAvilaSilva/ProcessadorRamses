@@ -1,0 +1,2407 @@
+|Ramses
+clk => memoria:mem.clock
+clk => registradorNbits:reg_A.clk
+clk => registradorNbits:reg_B.clk
+clk => registradorNbits:reg_RX.clk
+clk => registradorNbits:reg_Aux.clk
+clk => registradorNbits:reg_PC.clk
+clk => registradorNbits:reg_REM.clk
+clk => registradorNbits:reg_RDM_1.clk
+clk => registradorNbits:reg_RDM_2.clk
+clk => estado_atual~1.DATAIN
+reset => registradorNbits:reg_A.reset
+reset => registradorNbits:reg_B.reset
+reset => registradorNbits:reg_RX.reset
+reset => registradorNbits:reg_Aux.reset
+reset => registradorNbits:reg_PC.reset
+reset => registradorNbits:reg_REM.reset
+reset => registradorNbits:reg_RDM_1.reset
+reset => registradorNbits:reg_RDM_2.reset
+wren => memoria:mem.wren
+endereco[0] => memoria:mem.address[0]
+endereco[1] => memoria:mem.address[1]
+endereco[2] => memoria:mem.address[2]
+endereco[3] => memoria:mem.address[3]
+endereco[4] => memoria:mem.address[4]
+endereco[5] => memoria:mem.address[5]
+endereco[6] => memoria:mem.address[6]
+endereco[7] => memoria:mem.address[7]
+testeValorEnd[0] <= registradorNbits:reg_RDM_2.saida[0]
+testeValorEnd[1] <= registradorNbits:reg_RDM_2.saida[1]
+testeValorEnd[2] <= registradorNbits:reg_RDM_2.saida[2]
+testeValorEnd[3] <= registradorNbits:reg_RDM_2.saida[3]
+testeValorEnd[4] <= registradorNbits:reg_RDM_2.saida[4]
+testeValorEnd[5] <= registradorNbits:reg_RDM_2.saida[5]
+testeValorEnd[6] <= registradorNbits:reg_RDM_2.saida[6]
+testeValorEnd[7] <= registradorNbits:reg_RDM_2.saida[7]
+
+
+|Ramses|memoria:mem
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+address[5] => altsyncram:altsyncram_component.address_a[5]
+address[6] => altsyncram:altsyncram_component.address_a[6]
+address[7] => altsyncram:altsyncram_component.address_a[7]
+clock => altsyncram:altsyncram_component.clock0
+data[0] => altsyncram:altsyncram_component.data_a[0]
+data[1] => altsyncram:altsyncram_component.data_a[1]
+data[2] => altsyncram:altsyncram_component.data_a[2]
+data[3] => altsyncram:altsyncram_component.data_a[3]
+data[4] => altsyncram:altsyncram_component.data_a[4]
+data[5] => altsyncram:altsyncram_component.data_a[5]
+data[6] => altsyncram:altsyncram_component.data_a[6]
+data[7] => altsyncram:altsyncram_component.data_a[7]
+wren => altsyncram:altsyncram_component.wren_a
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
+
+
+|Ramses|memoria:mem|altsyncram:altsyncram_component
+wren_a => altsyncram_47c1:auto_generated.wren_a
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => altsyncram_47c1:auto_generated.data_a[0]
+data_a[1] => altsyncram_47c1:auto_generated.data_a[1]
+data_a[2] => altsyncram_47c1:auto_generated.data_a[2]
+data_a[3] => altsyncram_47c1:auto_generated.data_a[3]
+data_a[4] => altsyncram_47c1:auto_generated.data_a[4]
+data_a[5] => altsyncram_47c1:auto_generated.data_a[5]
+data_a[6] => altsyncram_47c1:auto_generated.data_a[6]
+data_a[7] => altsyncram_47c1:auto_generated.data_a[7]
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_47c1:auto_generated.address_a[0]
+address_a[1] => altsyncram_47c1:auto_generated.address_a[1]
+address_a[2] => altsyncram_47c1:auto_generated.address_a[2]
+address_a[3] => altsyncram_47c1:auto_generated.address_a[3]
+address_a[4] => altsyncram_47c1:auto_generated.address_a[4]
+address_a[5] => altsyncram_47c1:auto_generated.address_a[5]
+address_a[6] => altsyncram_47c1:auto_generated.address_a[6]
+address_a[7] => altsyncram_47c1:auto_generated.address_a[7]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_47c1:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_47c1:auto_generated.q_a[0]
+q_a[1] <= altsyncram_47c1:auto_generated.q_a[1]
+q_a[2] <= altsyncram_47c1:auto_generated.q_a[2]
+q_a[3] <= altsyncram_47c1:auto_generated.q_a[3]
+q_a[4] <= altsyncram_47c1:auto_generated.q_a[4]
+q_a[5] <= altsyncram_47c1:auto_generated.q_a[5]
+q_a[6] <= altsyncram_47c1:auto_generated.q_a[6]
+q_a[7] <= altsyncram_47c1:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|Ramses|memoria:mem|altsyncram:altsyncram_component|altsyncram_47c1:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+address_a[6] => ram_block1a0.PORTAADDR6
+address_a[6] => ram_block1a1.PORTAADDR6
+address_a[6] => ram_block1a2.PORTAADDR6
+address_a[6] => ram_block1a3.PORTAADDR6
+address_a[6] => ram_block1a4.PORTAADDR6
+address_a[6] => ram_block1a5.PORTAADDR6
+address_a[6] => ram_block1a6.PORTAADDR6
+address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+data_a[0] => ram_block1a0.PORTADATAIN
+data_a[1] => ram_block1a1.PORTADATAIN
+data_a[2] => ram_block1a2.PORTADATAIN
+data_a[3] => ram_block1a3.PORTADATAIN
+data_a[4] => ram_block1a4.PORTADATAIN
+data_a[5] => ram_block1a5.PORTADATAIN
+data_a[6] => ram_block1a6.PORTADATAIN
+data_a[7] => ram_block1a7.PORTADATAIN
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+wren_a => ram_block1a0.PORTAWE
+wren_a => ram_block1a1.PORTAWE
+wren_a => ram_block1a2.PORTAWE
+wren_a => ram_block1a3.PORTAWE
+wren_a => ram_block1a4.PORTAWE
+wren_a => ram_block1a5.PORTAWE
+wren_a => ram_block1a6.PORTAWE
+wren_a => ram_block1a7.PORTAWE
+
+
+|Ramses|registradorNbits:reg_A
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_A|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_B|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RX|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_Aux|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_PC|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_REM|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_1|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2
+entrada[0] => temp_D[0].DATAB
+entrada[1] => temp_D[1].DATAB
+entrada[2] => temp_D[2].DATAB
+entrada[3] => temp_D[3].DATAB
+entrada[4] => temp_D[4].DATAB
+entrada[5] => temp_D[5].DATAB
+entrada[6] => temp_D[6].DATAB
+entrada[7] => temp_D[7].DATAB
+clk => FlipFlopD:laco:0:cria_flipflopD.clk
+clk => FlipFlopD:laco:1:cria_flipflopD.clk
+clk => FlipFlopD:laco:2:cria_flipflopD.clk
+clk => FlipFlopD:laco:3:cria_flipflopD.clk
+clk => FlipFlopD:laco:4:cria_flipflopD.clk
+clk => FlipFlopD:laco:5:cria_flipflopD.clk
+clk => FlipFlopD:laco:6:cria_flipflopD.clk
+clk => FlipFlopD:laco:7:cria_flipflopD.clk
+reset => FlipFlopD:laco:0:cria_flipflopD.reset
+reset => FlipFlopD:laco:1:cria_flipflopD.reset
+reset => FlipFlopD:laco:2:cria_flipflopD.reset
+reset => FlipFlopD:laco:3:cria_flipflopD.reset
+reset => FlipFlopD:laco:4:cria_flipflopD.reset
+reset => FlipFlopD:laco:5:cria_flipflopD.reset
+reset => FlipFlopD:laco:6:cria_flipflopD.reset
+reset => FlipFlopD:laco:7:cria_flipflopD.reset
+carga => temp_D[7].OUTPUTSELECT
+carga => temp_D[6].OUTPUTSELECT
+carga => temp_D[5].OUTPUTSELECT
+carga => temp_D[4].OUTPUTSELECT
+carga => temp_D[3].OUTPUTSELECT
+carga => temp_D[2].OUTPUTSELECT
+carga => temp_D[1].OUTPUTSELECT
+carga => temp_D[0].OUTPUTSELECT
+saida[0] <= FlipFlopD:laco:0:cria_flipflopD.Q
+saida[1] <= FlipFlopD:laco:1:cria_flipflopD.Q
+saida[2] <= FlipFlopD:laco:2:cria_flipflopD.Q
+saida[3] <= FlipFlopD:laco:3:cria_flipflopD.Q
+saida[4] <= FlipFlopD:laco:4:cria_flipflopD.Q
+saida[5] <= FlipFlopD:laco:5:cria_flipflopD.Q
+saida[6] <= FlipFlopD:laco:6:cria_flipflopD.Q
+saida[7] <= FlipFlopD:laco:7:cria_flipflopD.Q
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:0:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:1:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:2:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:3:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:4:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:5:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:6:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|registradorNbits:reg_RDM_2|FlipFlopD:\laco:7:cria_flipflopD
+D => Q~reg0.DATAIN
+reset => Q~reg0.ACLR
+clk => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|mux3to1:mux01
+data0x[0] => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data0x[1] => LPM_MUX:LPM_MUX_component.DATA[0][1]
+data0x[2] => LPM_MUX:LPM_MUX_component.DATA[0][2]
+data0x[3] => LPM_MUX:LPM_MUX_component.DATA[0][3]
+data0x[4] => LPM_MUX:LPM_MUX_component.DATA[0][4]
+data0x[5] => LPM_MUX:LPM_MUX_component.DATA[0][5]
+data0x[6] => LPM_MUX:LPM_MUX_component.DATA[0][6]
+data0x[7] => LPM_MUX:LPM_MUX_component.DATA[0][7]
+data1x[0] => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data1x[1] => LPM_MUX:LPM_MUX_component.DATA[1][1]
+data1x[2] => LPM_MUX:LPM_MUX_component.DATA[1][2]
+data1x[3] => LPM_MUX:LPM_MUX_component.DATA[1][3]
+data1x[4] => LPM_MUX:LPM_MUX_component.DATA[1][4]
+data1x[5] => LPM_MUX:LPM_MUX_component.DATA[1][5]
+data1x[6] => LPM_MUX:LPM_MUX_component.DATA[1][6]
+data1x[7] => LPM_MUX:LPM_MUX_component.DATA[1][7]
+data2x[0] => LPM_MUX:LPM_MUX_component.DATA[2][0]
+data2x[1] => LPM_MUX:LPM_MUX_component.DATA[2][1]
+data2x[2] => LPM_MUX:LPM_MUX_component.DATA[2][2]
+data2x[3] => LPM_MUX:LPM_MUX_component.DATA[2][3]
+data2x[4] => LPM_MUX:LPM_MUX_component.DATA[2][4]
+data2x[5] => LPM_MUX:LPM_MUX_component.DATA[2][5]
+data2x[6] => LPM_MUX:LPM_MUX_component.DATA[2][6]
+data2x[7] => LPM_MUX:LPM_MUX_component.DATA[2][7]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+result[0] <= LPM_MUX:LPM_MUX_component.RESULT[0]
+result[1] <= LPM_MUX:LPM_MUX_component.RESULT[1]
+result[2] <= LPM_MUX:LPM_MUX_component.RESULT[2]
+result[3] <= LPM_MUX:LPM_MUX_component.RESULT[3]
+result[4] <= LPM_MUX:LPM_MUX_component.RESULT[4]
+result[5] <= LPM_MUX:LPM_MUX_component.RESULT[5]
+result[6] <= LPM_MUX:LPM_MUX_component.RESULT[6]
+result[7] <= LPM_MUX:LPM_MUX_component.RESULT[7]
+
+
+|Ramses|mux3to1:mux01|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_93e:auto_generated.data[0]
+data[0][1] => mux_93e:auto_generated.data[1]
+data[0][2] => mux_93e:auto_generated.data[2]
+data[0][3] => mux_93e:auto_generated.data[3]
+data[0][4] => mux_93e:auto_generated.data[4]
+data[0][5] => mux_93e:auto_generated.data[5]
+data[0][6] => mux_93e:auto_generated.data[6]
+data[0][7] => mux_93e:auto_generated.data[7]
+data[1][0] => mux_93e:auto_generated.data[8]
+data[1][1] => mux_93e:auto_generated.data[9]
+data[1][2] => mux_93e:auto_generated.data[10]
+data[1][3] => mux_93e:auto_generated.data[11]
+data[1][4] => mux_93e:auto_generated.data[12]
+data[1][5] => mux_93e:auto_generated.data[13]
+data[1][6] => mux_93e:auto_generated.data[14]
+data[1][7] => mux_93e:auto_generated.data[15]
+data[2][0] => mux_93e:auto_generated.data[16]
+data[2][1] => mux_93e:auto_generated.data[17]
+data[2][2] => mux_93e:auto_generated.data[18]
+data[2][3] => mux_93e:auto_generated.data[19]
+data[2][4] => mux_93e:auto_generated.data[20]
+data[2][5] => mux_93e:auto_generated.data[21]
+data[2][6] => mux_93e:auto_generated.data[22]
+data[2][7] => mux_93e:auto_generated.data[23]
+sel[0] => mux_93e:auto_generated.sel[0]
+sel[1] => mux_93e:auto_generated.sel[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_93e:auto_generated.result[0]
+result[1] <= mux_93e:auto_generated.result[1]
+result[2] <= mux_93e:auto_generated.result[2]
+result[3] <= mux_93e:auto_generated.result[3]
+result[4] <= mux_93e:auto_generated.result[4]
+result[5] <= mux_93e:auto_generated.result[5]
+result[6] <= mux_93e:auto_generated.result[6]
+result[7] <= mux_93e:auto_generated.result[7]
+
+
+|Ramses|mux3to1:mux01|LPM_MUX:LPM_MUX_component|mux_93e:auto_generated
+data[0] => data0_wire[0].IN0
+data[1] => data0_wire[1].IN0
+data[2] => data0_wire[2].IN0
+data[3] => data0_wire[3].IN0
+data[4] => data0_wire[4].IN0
+data[5] => data0_wire[5].IN0
+data[6] => data0_wire[6].IN0
+data[7] => data0_wire[7].IN0
+data[8] => data1_wire[0].IN0
+data[9] => data1_wire[1].IN0
+data[10] => data1_wire[2].IN0
+data[11] => data1_wire[3].IN0
+data[12] => data1_wire[4].IN0
+data[13] => data1_wire[5].IN0
+data[14] => data1_wire[6].IN0
+data[15] => data1_wire[7].IN0
+data[16] => data2_wire[0].IN0
+data[17] => data2_wire[1].IN0
+data[18] => data2_wire[2].IN0
+data[19] => data2_wire[3].IN0
+data[20] => data2_wire[4].IN0
+data[21] => data2_wire[5].IN0
+data[22] => data2_wire[6].IN0
+data[23] => data2_wire[7].IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result_node[3].DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result_node[4].DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result_node[5].DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= result_node[6].DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= result_node[7].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => data0_wire[7].IN0
+sel[0] => data1_wire[7].IN1
+sel[0] => data1_wire[6].IN1
+sel[0] => data1_wire[5].IN1
+sel[0] => data1_wire[4].IN1
+sel[0] => data1_wire[3].IN1
+sel[0] => data1_wire[2].IN1
+sel[0] => data1_wire[1].IN1
+sel[0] => data1_wire[0].IN1
+sel[1] => data2_wire[7].IN1
+sel[1] => data2_wire[6].IN1
+sel[1] => data2_wire[5].IN1
+sel[1] => data2_wire[4].IN1
+sel[1] => data2_wire[3].IN1
+sel[1] => data2_wire[2].IN1
+sel[1] => data2_wire[1].IN1
+sel[1] => data2_wire[0].IN1
+sel[1] => _.IN0
+
+
+|Ramses|mux3to1:mux02
+data0x[0] => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data0x[1] => LPM_MUX:LPM_MUX_component.DATA[0][1]
+data0x[2] => LPM_MUX:LPM_MUX_component.DATA[0][2]
+data0x[3] => LPM_MUX:LPM_MUX_component.DATA[0][3]
+data0x[4] => LPM_MUX:LPM_MUX_component.DATA[0][4]
+data0x[5] => LPM_MUX:LPM_MUX_component.DATA[0][5]
+data0x[6] => LPM_MUX:LPM_MUX_component.DATA[0][6]
+data0x[7] => LPM_MUX:LPM_MUX_component.DATA[0][7]
+data1x[0] => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data1x[1] => LPM_MUX:LPM_MUX_component.DATA[1][1]
+data1x[2] => LPM_MUX:LPM_MUX_component.DATA[1][2]
+data1x[3] => LPM_MUX:LPM_MUX_component.DATA[1][3]
+data1x[4] => LPM_MUX:LPM_MUX_component.DATA[1][4]
+data1x[5] => LPM_MUX:LPM_MUX_component.DATA[1][5]
+data1x[6] => LPM_MUX:LPM_MUX_component.DATA[1][6]
+data1x[7] => LPM_MUX:LPM_MUX_component.DATA[1][7]
+data2x[0] => LPM_MUX:LPM_MUX_component.DATA[2][0]
+data2x[1] => LPM_MUX:LPM_MUX_component.DATA[2][1]
+data2x[2] => LPM_MUX:LPM_MUX_component.DATA[2][2]
+data2x[3] => LPM_MUX:LPM_MUX_component.DATA[2][3]
+data2x[4] => LPM_MUX:LPM_MUX_component.DATA[2][4]
+data2x[5] => LPM_MUX:LPM_MUX_component.DATA[2][5]
+data2x[6] => LPM_MUX:LPM_MUX_component.DATA[2][6]
+data2x[7] => LPM_MUX:LPM_MUX_component.DATA[2][7]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+result[0] <= LPM_MUX:LPM_MUX_component.RESULT[0]
+result[1] <= LPM_MUX:LPM_MUX_component.RESULT[1]
+result[2] <= LPM_MUX:LPM_MUX_component.RESULT[2]
+result[3] <= LPM_MUX:LPM_MUX_component.RESULT[3]
+result[4] <= LPM_MUX:LPM_MUX_component.RESULT[4]
+result[5] <= LPM_MUX:LPM_MUX_component.RESULT[5]
+result[6] <= LPM_MUX:LPM_MUX_component.RESULT[6]
+result[7] <= LPM_MUX:LPM_MUX_component.RESULT[7]
+
+
+|Ramses|mux3to1:mux02|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_93e:auto_generated.data[0]
+data[0][1] => mux_93e:auto_generated.data[1]
+data[0][2] => mux_93e:auto_generated.data[2]
+data[0][3] => mux_93e:auto_generated.data[3]
+data[0][4] => mux_93e:auto_generated.data[4]
+data[0][5] => mux_93e:auto_generated.data[5]
+data[0][6] => mux_93e:auto_generated.data[6]
+data[0][7] => mux_93e:auto_generated.data[7]
+data[1][0] => mux_93e:auto_generated.data[8]
+data[1][1] => mux_93e:auto_generated.data[9]
+data[1][2] => mux_93e:auto_generated.data[10]
+data[1][3] => mux_93e:auto_generated.data[11]
+data[1][4] => mux_93e:auto_generated.data[12]
+data[1][5] => mux_93e:auto_generated.data[13]
+data[1][6] => mux_93e:auto_generated.data[14]
+data[1][7] => mux_93e:auto_generated.data[15]
+data[2][0] => mux_93e:auto_generated.data[16]
+data[2][1] => mux_93e:auto_generated.data[17]
+data[2][2] => mux_93e:auto_generated.data[18]
+data[2][3] => mux_93e:auto_generated.data[19]
+data[2][4] => mux_93e:auto_generated.data[20]
+data[2][5] => mux_93e:auto_generated.data[21]
+data[2][6] => mux_93e:auto_generated.data[22]
+data[2][7] => mux_93e:auto_generated.data[23]
+sel[0] => mux_93e:auto_generated.sel[0]
+sel[1] => mux_93e:auto_generated.sel[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_93e:auto_generated.result[0]
+result[1] <= mux_93e:auto_generated.result[1]
+result[2] <= mux_93e:auto_generated.result[2]
+result[3] <= mux_93e:auto_generated.result[3]
+result[4] <= mux_93e:auto_generated.result[4]
+result[5] <= mux_93e:auto_generated.result[5]
+result[6] <= mux_93e:auto_generated.result[6]
+result[7] <= mux_93e:auto_generated.result[7]
+
+
+|Ramses|mux3to1:mux02|LPM_MUX:LPM_MUX_component|mux_93e:auto_generated
+data[0] => data0_wire[0].IN0
+data[1] => data0_wire[1].IN0
+data[2] => data0_wire[2].IN0
+data[3] => data0_wire[3].IN0
+data[4] => data0_wire[4].IN0
+data[5] => data0_wire[5].IN0
+data[6] => data0_wire[6].IN0
+data[7] => data0_wire[7].IN0
+data[8] => data1_wire[0].IN0
+data[9] => data1_wire[1].IN0
+data[10] => data1_wire[2].IN0
+data[11] => data1_wire[3].IN0
+data[12] => data1_wire[4].IN0
+data[13] => data1_wire[5].IN0
+data[14] => data1_wire[6].IN0
+data[15] => data1_wire[7].IN0
+data[16] => data2_wire[0].IN0
+data[17] => data2_wire[1].IN0
+data[18] => data2_wire[2].IN0
+data[19] => data2_wire[3].IN0
+data[20] => data2_wire[4].IN0
+data[21] => data2_wire[5].IN0
+data[22] => data2_wire[6].IN0
+data[23] => data2_wire[7].IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result_node[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result_node[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result_node[3].DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result_node[4].DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result_node[5].DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= result_node[6].DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= result_node[7].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => data0_wire[7].IN0
+sel[0] => data1_wire[7].IN1
+sel[0] => data1_wire[6].IN1
+sel[0] => data1_wire[5].IN1
+sel[0] => data1_wire[4].IN1
+sel[0] => data1_wire[3].IN1
+sel[0] => data1_wire[2].IN1
+sel[0] => data1_wire[1].IN1
+sel[0] => data1_wire[0].IN1
+sel[1] => data2_wire[7].IN1
+sel[1] => data2_wire[6].IN1
+sel[1] => data2_wire[5].IN1
+sel[1] => data2_wire[4].IN1
+sel[1] => data2_wire[3].IN1
+sel[1] => data2_wire[2].IN1
+sel[1] => data2_wire[1].IN1
+sel[1] => data2_wire[0].IN1
+sel[1] => _.IN0
+
+
+|Ramses|ULA_nBits:ULA
+inA[0] => ULA:primeira_instancia_ULA.inA
+inA[1] => ULA:oi:1:proximas_n_instancias.inA
+inA[2] => ULA:oi:2:proximas_n_instancias.inA
+inA[3] => ULA:oi:3:proximas_n_instancias.inA
+inA[4] => ULA:oi:4:proximas_n_instancias.inA
+inA[5] => ULA:oi:5:proximas_n_instancias.inA
+inA[6] => ULA:oi:6:proximas_n_instancias.inA
+inA[7] => ULA:oi:7:proximas_n_instancias.inA
+inB[0] => Mux7.IN1
+inB[0] => Mux7.IN2
+inB[0] => Mux7.IN3
+inB[0] => Mux7.IN4
+inB[0] => Mux7.IN5
+inB[0] => Mux7.IN6
+inB[0] => Mux7.IN7
+inB[0] => Mux7.IN8
+inB[0] => Mux7.IN9
+inB[0] => Mux7.IN10
+inB[0] => Mux7.IN11
+inB[0] => Mux7.IN12
+inB[0] => Mux7.IN13
+inB[0] => Mux7.IN14
+inB[0] => Mux7.IN15
+inB[0] => Mux7.IN16
+inB[0] => Mux7.IN17
+inB[0] => Mux7.IN18
+inB[0] => Mux7.IN19
+inB[0] => Mux7.IN20
+inB[0] => Mux7.IN21
+inB[0] => Mux7.IN22
+inB[0] => Mux7.IN23
+inB[0] => Mux7.IN24
+inB[0] => Mux7.IN25
+inB[0] => Mux7.IN26
+inB[0] => Mux7.IN27
+inB[0] => Mux7.IN28
+inB[0] => Mux7.IN29
+inB[0] => Mux7.IN30
+inB[0] => Mux7.IN31
+inB[0] => Mux7.IN32
+inB[0] => Mux7.IN33
+inB[0] => Mux7.IN34
+inB[0] => Mux7.IN35
+inB[0] => Mux7.IN36
+inB[0] => Mux7.IN37
+inB[0] => Mux7.IN38
+inB[0] => Mux7.IN39
+inB[0] => Mux7.IN40
+inB[0] => Mux7.IN41
+inB[0] => Mux7.IN42
+inB[0] => Mux7.IN43
+inB[0] => Mux7.IN44
+inB[0] => Mux7.IN45
+inB[0] => Mux7.IN46
+inB[0] => Mux7.IN47
+inB[0] => Mux7.IN48
+inB[0] => Mux7.IN49
+inB[0] => Mux7.IN50
+inB[0] => Mux7.IN51
+inB[0] => Mux7.IN52
+inB[0] => Mux7.IN53
+inB[0] => Mux7.IN54
+inB[0] => Mux7.IN55
+inB[0] => Mux7.IN56
+inB[0] => Mux7.IN57
+inB[0] => Mux7.IN58
+inB[0] => Mux7.IN59
+inB[0] => Mux7.IN60
+inB[0] => Mux7.IN61
+inB[0] => Mux7.IN62
+inB[0] => Mux7.IN63
+inB[0] => Mux7.IN0
+inB[1] => Mux6.IN1
+inB[1] => Mux6.IN2
+inB[1] => Mux6.IN3
+inB[1] => Mux6.IN4
+inB[1] => Mux6.IN5
+inB[1] => Mux6.IN6
+inB[1] => Mux6.IN7
+inB[1] => Mux6.IN8
+inB[1] => Mux6.IN9
+inB[1] => Mux6.IN10
+inB[1] => Mux6.IN11
+inB[1] => Mux6.IN12
+inB[1] => Mux6.IN13
+inB[1] => Mux6.IN14
+inB[1] => Mux6.IN15
+inB[1] => Mux6.IN16
+inB[1] => Mux6.IN17
+inB[1] => Mux6.IN18
+inB[1] => Mux6.IN19
+inB[1] => Mux6.IN20
+inB[1] => Mux6.IN21
+inB[1] => Mux6.IN22
+inB[1] => Mux6.IN23
+inB[1] => Mux6.IN24
+inB[1] => Mux6.IN25
+inB[1] => Mux6.IN26
+inB[1] => Mux6.IN27
+inB[1] => Mux6.IN28
+inB[1] => Mux6.IN29
+inB[1] => Mux6.IN30
+inB[1] => Mux6.IN31
+inB[1] => Mux6.IN32
+inB[1] => Mux6.IN33
+inB[1] => Mux6.IN34
+inB[1] => Mux6.IN35
+inB[1] => Mux6.IN36
+inB[1] => Mux6.IN37
+inB[1] => Mux6.IN38
+inB[1] => Mux6.IN39
+inB[1] => Mux6.IN40
+inB[1] => Mux6.IN41
+inB[1] => Mux6.IN42
+inB[1] => Mux6.IN43
+inB[1] => Mux6.IN44
+inB[1] => Mux6.IN45
+inB[1] => Mux6.IN46
+inB[1] => Mux6.IN47
+inB[1] => Mux6.IN48
+inB[1] => Mux6.IN49
+inB[1] => Mux6.IN50
+inB[1] => Mux6.IN51
+inB[1] => Mux6.IN52
+inB[1] => Mux6.IN53
+inB[1] => Mux6.IN54
+inB[1] => Mux6.IN55
+inB[1] => Mux6.IN56
+inB[1] => Mux6.IN57
+inB[1] => Mux6.IN58
+inB[1] => Mux6.IN59
+inB[1] => Mux6.IN60
+inB[1] => Mux6.IN61
+inB[1] => Mux6.IN62
+inB[1] => Mux6.IN63
+inB[1] => Mux6.IN0
+inB[2] => Mux5.IN1
+inB[2] => Mux5.IN2
+inB[2] => Mux5.IN3
+inB[2] => Mux5.IN4
+inB[2] => Mux5.IN5
+inB[2] => Mux5.IN6
+inB[2] => Mux5.IN7
+inB[2] => Mux5.IN8
+inB[2] => Mux5.IN9
+inB[2] => Mux5.IN10
+inB[2] => Mux5.IN11
+inB[2] => Mux5.IN12
+inB[2] => Mux5.IN13
+inB[2] => Mux5.IN14
+inB[2] => Mux5.IN15
+inB[2] => Mux5.IN16
+inB[2] => Mux5.IN17
+inB[2] => Mux5.IN18
+inB[2] => Mux5.IN19
+inB[2] => Mux5.IN20
+inB[2] => Mux5.IN21
+inB[2] => Mux5.IN22
+inB[2] => Mux5.IN23
+inB[2] => Mux5.IN24
+inB[2] => Mux5.IN25
+inB[2] => Mux5.IN26
+inB[2] => Mux5.IN27
+inB[2] => Mux5.IN28
+inB[2] => Mux5.IN29
+inB[2] => Mux5.IN30
+inB[2] => Mux5.IN31
+inB[2] => Mux5.IN32
+inB[2] => Mux5.IN33
+inB[2] => Mux5.IN34
+inB[2] => Mux5.IN35
+inB[2] => Mux5.IN36
+inB[2] => Mux5.IN37
+inB[2] => Mux5.IN38
+inB[2] => Mux5.IN39
+inB[2] => Mux5.IN40
+inB[2] => Mux5.IN41
+inB[2] => Mux5.IN42
+inB[2] => Mux5.IN43
+inB[2] => Mux5.IN44
+inB[2] => Mux5.IN45
+inB[2] => Mux5.IN46
+inB[2] => Mux5.IN47
+inB[2] => Mux5.IN48
+inB[2] => Mux5.IN49
+inB[2] => Mux5.IN50
+inB[2] => Mux5.IN51
+inB[2] => Mux5.IN52
+inB[2] => Mux5.IN53
+inB[2] => Mux5.IN54
+inB[2] => Mux5.IN55
+inB[2] => Mux5.IN56
+inB[2] => Mux5.IN57
+inB[2] => Mux5.IN58
+inB[2] => Mux5.IN59
+inB[2] => Mux5.IN60
+inB[2] => Mux5.IN61
+inB[2] => Mux5.IN62
+inB[2] => Mux5.IN63
+inB[2] => Mux5.IN0
+inB[3] => Mux4.IN1
+inB[3] => Mux4.IN2
+inB[3] => Mux4.IN3
+inB[3] => Mux4.IN4
+inB[3] => Mux4.IN5
+inB[3] => Mux4.IN6
+inB[3] => Mux4.IN7
+inB[3] => Mux4.IN8
+inB[3] => Mux4.IN9
+inB[3] => Mux4.IN10
+inB[3] => Mux4.IN11
+inB[3] => Mux4.IN12
+inB[3] => Mux4.IN13
+inB[3] => Mux4.IN14
+inB[3] => Mux4.IN15
+inB[3] => Mux4.IN16
+inB[3] => Mux4.IN17
+inB[3] => Mux4.IN18
+inB[3] => Mux4.IN19
+inB[3] => Mux4.IN20
+inB[3] => Mux4.IN21
+inB[3] => Mux4.IN22
+inB[3] => Mux4.IN23
+inB[3] => Mux4.IN24
+inB[3] => Mux4.IN25
+inB[3] => Mux4.IN26
+inB[3] => Mux4.IN27
+inB[3] => Mux4.IN28
+inB[3] => Mux4.IN29
+inB[3] => Mux4.IN30
+inB[3] => Mux4.IN31
+inB[3] => Mux4.IN32
+inB[3] => Mux4.IN33
+inB[3] => Mux4.IN34
+inB[3] => Mux4.IN35
+inB[3] => Mux4.IN36
+inB[3] => Mux4.IN37
+inB[3] => Mux4.IN38
+inB[3] => Mux4.IN39
+inB[3] => Mux4.IN40
+inB[3] => Mux4.IN41
+inB[3] => Mux4.IN42
+inB[3] => Mux4.IN43
+inB[3] => Mux4.IN44
+inB[3] => Mux4.IN45
+inB[3] => Mux4.IN46
+inB[3] => Mux4.IN47
+inB[3] => Mux4.IN48
+inB[3] => Mux4.IN49
+inB[3] => Mux4.IN50
+inB[3] => Mux4.IN51
+inB[3] => Mux4.IN52
+inB[3] => Mux4.IN53
+inB[3] => Mux4.IN54
+inB[3] => Mux4.IN55
+inB[3] => Mux4.IN56
+inB[3] => Mux4.IN57
+inB[3] => Mux4.IN58
+inB[3] => Mux4.IN59
+inB[3] => Mux4.IN60
+inB[3] => Mux4.IN61
+inB[3] => Mux4.IN62
+inB[3] => Mux4.IN63
+inB[3] => Mux4.IN0
+inB[4] => Mux3.IN1
+inB[4] => Mux3.IN2
+inB[4] => Mux3.IN3
+inB[4] => Mux3.IN4
+inB[4] => Mux3.IN5
+inB[4] => Mux3.IN6
+inB[4] => Mux3.IN7
+inB[4] => Mux3.IN8
+inB[4] => Mux3.IN9
+inB[4] => Mux3.IN10
+inB[4] => Mux3.IN11
+inB[4] => Mux3.IN12
+inB[4] => Mux3.IN13
+inB[4] => Mux3.IN14
+inB[4] => Mux3.IN15
+inB[4] => Mux3.IN16
+inB[4] => Mux3.IN17
+inB[4] => Mux3.IN18
+inB[4] => Mux3.IN19
+inB[4] => Mux3.IN20
+inB[4] => Mux3.IN21
+inB[4] => Mux3.IN22
+inB[4] => Mux3.IN23
+inB[4] => Mux3.IN24
+inB[4] => Mux3.IN25
+inB[4] => Mux3.IN26
+inB[4] => Mux3.IN27
+inB[4] => Mux3.IN28
+inB[4] => Mux3.IN29
+inB[4] => Mux3.IN30
+inB[4] => Mux3.IN31
+inB[4] => Mux3.IN32
+inB[4] => Mux3.IN33
+inB[4] => Mux3.IN34
+inB[4] => Mux3.IN35
+inB[4] => Mux3.IN36
+inB[4] => Mux3.IN37
+inB[4] => Mux3.IN38
+inB[4] => Mux3.IN39
+inB[4] => Mux3.IN40
+inB[4] => Mux3.IN41
+inB[4] => Mux3.IN42
+inB[4] => Mux3.IN43
+inB[4] => Mux3.IN44
+inB[4] => Mux3.IN45
+inB[4] => Mux3.IN46
+inB[4] => Mux3.IN47
+inB[4] => Mux3.IN48
+inB[4] => Mux3.IN49
+inB[4] => Mux3.IN50
+inB[4] => Mux3.IN51
+inB[4] => Mux3.IN52
+inB[4] => Mux3.IN53
+inB[4] => Mux3.IN54
+inB[4] => Mux3.IN55
+inB[4] => Mux3.IN56
+inB[4] => Mux3.IN57
+inB[4] => Mux3.IN58
+inB[4] => Mux3.IN59
+inB[4] => Mux3.IN60
+inB[4] => Mux3.IN61
+inB[4] => Mux3.IN62
+inB[4] => Mux3.IN63
+inB[4] => Mux3.IN0
+inB[5] => Mux2.IN1
+inB[5] => Mux2.IN2
+inB[5] => Mux2.IN3
+inB[5] => Mux2.IN4
+inB[5] => Mux2.IN5
+inB[5] => Mux2.IN6
+inB[5] => Mux2.IN7
+inB[5] => Mux2.IN8
+inB[5] => Mux2.IN9
+inB[5] => Mux2.IN10
+inB[5] => Mux2.IN11
+inB[5] => Mux2.IN12
+inB[5] => Mux2.IN13
+inB[5] => Mux2.IN14
+inB[5] => Mux2.IN15
+inB[5] => Mux2.IN16
+inB[5] => Mux2.IN17
+inB[5] => Mux2.IN18
+inB[5] => Mux2.IN19
+inB[5] => Mux2.IN20
+inB[5] => Mux2.IN21
+inB[5] => Mux2.IN22
+inB[5] => Mux2.IN23
+inB[5] => Mux2.IN24
+inB[5] => Mux2.IN25
+inB[5] => Mux2.IN26
+inB[5] => Mux2.IN27
+inB[5] => Mux2.IN28
+inB[5] => Mux2.IN29
+inB[5] => Mux2.IN30
+inB[5] => Mux2.IN31
+inB[5] => Mux2.IN32
+inB[5] => Mux2.IN33
+inB[5] => Mux2.IN34
+inB[5] => Mux2.IN35
+inB[5] => Mux2.IN36
+inB[5] => Mux2.IN37
+inB[5] => Mux2.IN38
+inB[5] => Mux2.IN39
+inB[5] => Mux2.IN40
+inB[5] => Mux2.IN41
+inB[5] => Mux2.IN42
+inB[5] => Mux2.IN43
+inB[5] => Mux2.IN44
+inB[5] => Mux2.IN45
+inB[5] => Mux2.IN46
+inB[5] => Mux2.IN47
+inB[5] => Mux2.IN48
+inB[5] => Mux2.IN49
+inB[5] => Mux2.IN50
+inB[5] => Mux2.IN51
+inB[5] => Mux2.IN52
+inB[5] => Mux2.IN53
+inB[5] => Mux2.IN54
+inB[5] => Mux2.IN55
+inB[5] => Mux2.IN56
+inB[5] => Mux2.IN57
+inB[5] => Mux2.IN58
+inB[5] => Mux2.IN59
+inB[5] => Mux2.IN60
+inB[5] => Mux2.IN61
+inB[5] => Mux2.IN62
+inB[5] => Mux2.IN63
+inB[5] => Mux2.IN0
+inB[6] => Mux1.IN1
+inB[6] => Mux1.IN2
+inB[6] => Mux1.IN3
+inB[6] => Mux1.IN4
+inB[6] => Mux1.IN5
+inB[6] => Mux1.IN6
+inB[6] => Mux1.IN7
+inB[6] => Mux1.IN8
+inB[6] => Mux1.IN9
+inB[6] => Mux1.IN10
+inB[6] => Mux1.IN11
+inB[6] => Mux1.IN12
+inB[6] => Mux1.IN13
+inB[6] => Mux1.IN14
+inB[6] => Mux1.IN15
+inB[6] => Mux1.IN16
+inB[6] => Mux1.IN17
+inB[6] => Mux1.IN18
+inB[6] => Mux1.IN19
+inB[6] => Mux1.IN20
+inB[6] => Mux1.IN21
+inB[6] => Mux1.IN22
+inB[6] => Mux1.IN23
+inB[6] => Mux1.IN24
+inB[6] => Mux1.IN25
+inB[6] => Mux1.IN26
+inB[6] => Mux1.IN27
+inB[6] => Mux1.IN28
+inB[6] => Mux1.IN29
+inB[6] => Mux1.IN30
+inB[6] => Mux1.IN31
+inB[6] => Mux1.IN32
+inB[6] => Mux1.IN33
+inB[6] => Mux1.IN34
+inB[6] => Mux1.IN35
+inB[6] => Mux1.IN36
+inB[6] => Mux1.IN37
+inB[6] => Mux1.IN38
+inB[6] => Mux1.IN39
+inB[6] => Mux1.IN40
+inB[6] => Mux1.IN41
+inB[6] => Mux1.IN42
+inB[6] => Mux1.IN43
+inB[6] => Mux1.IN44
+inB[6] => Mux1.IN45
+inB[6] => Mux1.IN46
+inB[6] => Mux1.IN47
+inB[6] => Mux1.IN48
+inB[6] => Mux1.IN49
+inB[6] => Mux1.IN50
+inB[6] => Mux1.IN51
+inB[6] => Mux1.IN52
+inB[6] => Mux1.IN53
+inB[6] => Mux1.IN54
+inB[6] => Mux1.IN55
+inB[6] => Mux1.IN56
+inB[6] => Mux1.IN57
+inB[6] => Mux1.IN58
+inB[6] => Mux1.IN59
+inB[6] => Mux1.IN60
+inB[6] => Mux1.IN61
+inB[6] => Mux1.IN62
+inB[6] => Mux1.IN63
+inB[6] => Mux1.IN0
+inB[7] => Mux0.IN1
+inB[7] => Mux0.IN2
+inB[7] => Mux0.IN3
+inB[7] => Mux0.IN4
+inB[7] => Mux0.IN5
+inB[7] => Mux0.IN6
+inB[7] => Mux0.IN7
+inB[7] => Mux0.IN8
+inB[7] => Mux0.IN9
+inB[7] => Mux0.IN10
+inB[7] => Mux0.IN11
+inB[7] => Mux0.IN12
+inB[7] => Mux0.IN13
+inB[7] => Mux0.IN14
+inB[7] => Mux0.IN15
+inB[7] => Mux0.IN16
+inB[7] => Mux0.IN17
+inB[7] => Mux0.IN18
+inB[7] => Mux0.IN19
+inB[7] => Mux0.IN20
+inB[7] => Mux0.IN21
+inB[7] => Mux0.IN22
+inB[7] => Mux0.IN23
+inB[7] => Mux0.IN24
+inB[7] => Mux0.IN25
+inB[7] => Mux0.IN26
+inB[7] => Mux0.IN27
+inB[7] => Mux0.IN28
+inB[7] => Mux0.IN29
+inB[7] => Mux0.IN30
+inB[7] => Mux0.IN31
+inB[7] => Mux0.IN32
+inB[7] => Mux0.IN33
+inB[7] => Mux0.IN34
+inB[7] => Mux0.IN35
+inB[7] => Mux0.IN36
+inB[7] => Mux0.IN37
+inB[7] => Mux0.IN38
+inB[7] => Mux0.IN39
+inB[7] => Mux0.IN40
+inB[7] => Mux0.IN41
+inB[7] => Mux0.IN42
+inB[7] => Mux0.IN43
+inB[7] => Mux0.IN44
+inB[7] => Mux0.IN45
+inB[7] => Mux0.IN46
+inB[7] => Mux0.IN47
+inB[7] => Mux0.IN48
+inB[7] => Mux0.IN49
+inB[7] => Mux0.IN50
+inB[7] => Mux0.IN51
+inB[7] => Mux0.IN52
+inB[7] => Mux0.IN53
+inB[7] => Mux0.IN54
+inB[7] => Mux0.IN55
+inB[7] => Mux0.IN56
+inB[7] => Mux0.IN57
+inB[7] => Mux0.IN58
+inB[7] => Mux0.IN59
+inB[7] => Mux0.IN60
+inB[7] => Mux0.IN61
+inB[7] => Mux0.IN62
+inB[7] => Mux0.IN63
+inB[7] => Mux0.IN0
+sel[0] => Mux0.IN69
+sel[0] => Mux1.IN69
+sel[0] => Mux2.IN69
+sel[0] => Mux3.IN69
+sel[0] => Mux4.IN69
+sel[0] => Mux5.IN69
+sel[0] => Mux6.IN69
+sel[0] => Mux7.IN69
+sel[0] => Mux8.IN69
+sel[0] => ULA:primeira_instancia_ULA.sel[0]
+sel[0] => ULA:oi:1:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:2:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:3:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:4:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:5:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:6:proximas_n_instancias.sel[0]
+sel[0] => ULA:oi:7:proximas_n_instancias.sel[0]
+sel[1] => Mux0.IN68
+sel[1] => Mux1.IN68
+sel[1] => Mux2.IN68
+sel[1] => Mux3.IN68
+sel[1] => Mux4.IN68
+sel[1] => Mux5.IN68
+sel[1] => Mux6.IN68
+sel[1] => Mux7.IN68
+sel[1] => Mux8.IN68
+sel[1] => ULA:primeira_instancia_ULA.sel[1]
+sel[1] => ULA:oi:1:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:2:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:3:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:4:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:5:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:6:proximas_n_instancias.sel[1]
+sel[1] => ULA:oi:7:proximas_n_instancias.sel[1]
+sel[2] => Mux0.IN67
+sel[2] => Mux1.IN67
+sel[2] => Mux2.IN67
+sel[2] => Mux3.IN67
+sel[2] => Mux4.IN67
+sel[2] => Mux5.IN67
+sel[2] => Mux6.IN67
+sel[2] => Mux7.IN67
+sel[2] => Mux8.IN67
+sel[2] => ULA:primeira_instancia_ULA.sel[2]
+sel[2] => ULA:oi:1:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:2:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:3:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:4:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:5:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:6:proximas_n_instancias.sel[2]
+sel[2] => ULA:oi:7:proximas_n_instancias.sel[2]
+sel[3] => Mux0.IN66
+sel[3] => Mux1.IN66
+sel[3] => Mux2.IN66
+sel[3] => Mux3.IN66
+sel[3] => Mux4.IN66
+sel[3] => Mux5.IN66
+sel[3] => Mux6.IN66
+sel[3] => Mux7.IN66
+sel[3] => Mux8.IN66
+sel[3] => ULA:primeira_instancia_ULA.sel[3]
+sel[3] => ULA:oi:1:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:2:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:3:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:4:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:5:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:6:proximas_n_instancias.sel[3]
+sel[3] => ULA:oi:7:proximas_n_instancias.sel[3]
+sel[4] => Mux0.IN65
+sel[4] => Mux1.IN65
+sel[4] => Mux2.IN65
+sel[4] => Mux3.IN65
+sel[4] => Mux4.IN65
+sel[4] => Mux5.IN65
+sel[4] => Mux6.IN65
+sel[4] => Mux7.IN65
+sel[4] => Mux8.IN65
+sel[4] => ULA:primeira_instancia_ULA.sel[4]
+sel[4] => ULA:oi:1:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:2:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:3:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:4:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:5:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:6:proximas_n_instancias.sel[4]
+sel[4] => ULA:oi:7:proximas_n_instancias.sel[4]
+sel[5] => Mux0.IN64
+sel[5] => Mux1.IN64
+sel[5] => Mux2.IN64
+sel[5] => Mux3.IN64
+sel[5] => Mux4.IN64
+sel[5] => Mux5.IN64
+sel[5] => Mux6.IN64
+sel[5] => Mux7.IN64
+sel[5] => Mux8.IN64
+sel[5] => ULA:primeira_instancia_ULA.sel[5]
+sel[5] => ULA:oi:1:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:2:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:3:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:4:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:5:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:6:proximas_n_instancias.sel[5]
+sel[5] => ULA:oi:7:proximas_n_instancias.sel[5]
+Y[0] <= ULA:primeira_instancia_ULA.y
+Y[1] <= ULA:oi:1:proximas_n_instancias.y
+Y[2] <= ULA:oi:2:proximas_n_instancias.y
+Y[3] <= ULA:oi:3:proximas_n_instancias.y
+Y[4] <= ULA:oi:4:proximas_n_instancias.y
+Y[5] <= ULA:oi:5:proximas_n_instancias.y
+Y[6] <= ULA:oi:6:proximas_n_instancias.y
+Y[7] <= ULA:oi:7:proximas_n_instancias.y
+Cout[0] <= ULA:primeira_instancia_ULA.Cout
+Cout[1] <= ULA:oi:1:proximas_n_instancias.Cout
+Cout[2] <= ULA:oi:2:proximas_n_instancias.Cout
+Cout[3] <= ULA:oi:3:proximas_n_instancias.Cout
+Cout[4] <= ULA:oi:4:proximas_n_instancias.Cout
+Cout[5] <= ULA:oi:5:proximas_n_instancias.Cout
+Cout[6] <= ULA:oi:6:proximas_n_instancias.Cout
+Cout[7] <= ULA:oi:7:proximas_n_instancias.Cout
+z <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+neg <= ULA:oi:7:proximas_n_instancias.y
+o <= process_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:primeira_instancia_ULA
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:primeira_instancia_ULA|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:primeira_instancia_ULA|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:1:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:1:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:1:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:2:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:2:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:2:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:3:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:3:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:3:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:4:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:4:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:4:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:5:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:5:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:5:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:6:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:6:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:6:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:7:proximas_n_instancias
+inA => tempY.IN0
+inA => tempY.IN0
+inA => tempY.IN0
+inA => somador:instancia_somador.a
+inA => subtrator:instancia_subtrator.a
+inA => Mux0.IN3
+inB => tempY.IN1
+inB => tempY.IN1
+inB => tempY.IN1
+inB => somador:instancia_somador.b
+inB => subtrator:instancia_subtrator.b
+inB => tempY.IN1
+Cin => somador:instancia_somador.cin
+Cin => subtrator:instancia_subtrator.cin
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN67
+sel[0] => Mux2.IN69
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN66
+sel[1] => Mux2.IN68
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN65
+sel[2] => Mux2.IN67
+sel[3] => Mux1.IN64
+sel[3] => Mux2.IN66
+sel[4] => Mux1.IN63
+sel[4] => Mux2.IN65
+sel[5] => Mux1.IN62
+sel[5] => Mux2.IN64
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= tempCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:7:proximas_n_instancias|somador:instancia_somador
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Ramses|ULA_nBits:ULA|ULA:\oi:7:proximas_n_instancias|subtrator:instancia_subtrator
+cin => cout.IN0
+cin => cout.IN0
+cin => s.IN1
+a => cout.IN0
+a => cout.IN1
+a => s.IN0
+b => cout.IN1
+b => cout.IN1
+b => s.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

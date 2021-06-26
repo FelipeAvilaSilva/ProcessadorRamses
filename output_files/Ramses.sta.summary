@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk'
+Slack : -2.164
+TNS   : -34.718
+
+Type  : Slow Model Setup 'estado_atual.t3'
+Slack : -1.454
+TNS   : -3.274
+
+Type  : Slow Model Hold 'clk'
+Slack : -1.197
+TNS   : -9.949
+
+Type  : Slow Model Hold 'estado_atual.t3'
+Slack : 0.779
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -2.000
+TNS   : -144.380
+
+Type  : Slow Model Minimum Pulse Width 'estado_atual.t3'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clk'
+Slack : -1.460
+TNS   : -19.512
+
+Type  : Fast Model Setup 'estado_atual.t3'
+Slack : -0.247
+TNS   : -0.339
+
+Type  : Fast Model Hold 'clk'
+Slack : -0.841
+TNS   : -7.441
+
+Type  : Fast Model Hold 'estado_atual.t3'
+Slack : 0.538
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -2.000
+TNS   : -144.380
+
+Type  : Fast Model Minimum Pulse Width 'estado_atual.t3'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

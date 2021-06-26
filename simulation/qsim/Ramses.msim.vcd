@@ -1,0 +1,431 @@
+$comment
+	File created using the following command:
+		vcd file Ramses.msim.vcd -direction
+$end
+$date
+	Sat Jun 26 17:09:51 2021
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Ramses_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 8 " endereco [7:0] $end
+$var reg 1 # reset $end
+$var reg 1 $ wren $end
+$var wire 1 % testeValorEnd [7] $end
+$var wire 1 & testeValorEnd [6] $end
+$var wire 1 ' testeValorEnd [5] $end
+$var wire 1 ( testeValorEnd [4] $end
+$var wire 1 ) testeValorEnd [3] $end
+$var wire 1 * testeValorEnd [2] $end
+$var wire 1 + testeValorEnd [1] $end
+$var wire 1 , testeValorEnd [0] $end
+$var wire 1 - sampler $end
+$scope module i1 $end
+$var wire 1 . gnd $end
+$var wire 1 / vcc $end
+$var wire 1 0 unknown $end
+$var tri1 1 1 devclrn $end
+$var tri1 1 2 devpor $end
+$var tri1 1 3 devoe $end
+$var wire 1 4 wren~combout $end
+$var wire 1 5 clk~combout $end
+$var wire 1 6 clk~clkctrl_outclk $end
+$var wire 1 7 ~GND~combout $end
+$var wire 1 8 reset~combout $end
+$var wire 1 9 reset~clkctrl_outclk $end
+$var wire 1 : estado_atual.t3~clkctrl_outclk $end
+$var wire 1 ; proximo_estado~2_combout $end
+$var wire 1 < proximo_estado.t1_402~combout $end
+$var wire 1 = estado_atual.t1~regout $end
+$var wire 1 > proximo_estado.t2_394~combout $end
+$var wire 1 ? estado_atual.t2~regout $end
+$var wire 1 @ proximo_estado.t3_386~combout $end
+$var wire 1 A estado_atual.t3~regout $end
+$var wire 1 B reg_RDM_2|laco:0:cria_flipflopD|Q~regout $end
+$var wire 1 C reg_RDM_2|laco:1:cria_flipflopD|Q~regout $end
+$var wire 1 D reg_RDM_2|laco:2:cria_flipflopD|Q~feeder_combout $end
+$var wire 1 E reg_RDM_2|laco:2:cria_flipflopD|Q~regout $end
+$var wire 1 F reg_RDM_2|laco:3:cria_flipflopD|Q~feeder_combout $end
+$var wire 1 G reg_RDM_2|laco:3:cria_flipflopD|Q~regout $end
+$var wire 1 H reg_RDM_2|laco:4:cria_flipflopD|Q~regout $end
+$var wire 1 I reg_RDM_2|laco:5:cria_flipflopD|Q~feeder_combout $end
+$var wire 1 J reg_RDM_2|laco:5:cria_flipflopD|Q~regout $end
+$var wire 1 K reg_RDM_2|laco:6:cria_flipflopD|Q~feeder_combout $end
+$var wire 1 L reg_RDM_2|laco:6:cria_flipflopD|Q~regout $end
+$var wire 1 M reg_RDM_2|laco:7:cria_flipflopD|Q~regout $end
+$var wire 1 N endereco~combout [7] $end
+$var wire 1 O endereco~combout [6] $end
+$var wire 1 P endereco~combout [5] $end
+$var wire 1 Q endereco~combout [4] $end
+$var wire 1 R endereco~combout [3] $end
+$var wire 1 S endereco~combout [2] $end
+$var wire 1 T endereco~combout [1] $end
+$var wire 1 U endereco~combout [0] $end
+$var wire 1 V mem|altsyncram_component|auto_generated|q_a [7] $end
+$var wire 1 W mem|altsyncram_component|auto_generated|q_a [6] $end
+$var wire 1 X mem|altsyncram_component|auto_generated|q_a [5] $end
+$var wire 1 Y mem|altsyncram_component|auto_generated|q_a [4] $end
+$var wire 1 Z mem|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 [ mem|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 \ mem|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 ] mem|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 ^ mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [7] $end
+$var wire 1 _ mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [6] $end
+$var wire 1 ` mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [5] $end
+$var wire 1 a mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [4] $end
+$var wire 1 b mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [3] $end
+$var wire 1 c mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2] $end
+$var wire 1 d mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1] $end
+$var wire 1 e mem|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b0 "
+0#
+0$
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+x-
+0.
+1/
+x0
+11
+12
+13
+04
+05
+06
+07
+08
+09
+0:
+0;
+1<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0e
+0d
+0c
+0b
+0a
+0`
+0_
+0^
+$end
+#20000
+1!
+15
+16
+0-
+1=
+1>
+1;
+0<
+#40000
+0!
+05
+06
+1-
+#60000
+1!
+15
+16
+0-
+1?
+0=
+1e
+1`
+1_
+1]
+1X
+1W
+1@
+0>
+1I
+1K
+#80000
+0!
+05
+06
+1-
+#100000
+1!
+15
+16
+0-
+1L
+1J
+1B
+1A
+0?
+1:
+0;
+1&
+1'
+1,
+#120000
+0!
+05
+06
+1-
+#140000
+1!
+15
+16
+0-
+#160000
+0!
+05
+06
+1-
+#180000
+1!
+15
+16
+0-
+#200000
+0!
+05
+06
+1-
+#220000
+1!
+15
+16
+0-
+#240000
+0!
+05
+06
+1-
+#260000
+1!
+15
+16
+0-
+#280000
+0!
+05
+06
+1-
+#300000
+1!
+15
+16
+0-
+#320000
+0!
+05
+06
+1-
+#340000
+1!
+15
+16
+0-
+#360000
+0!
+05
+06
+1-
+#380000
+1!
+15
+16
+0-
+#400000
+0!
+05
+06
+1-
+#420000
+1!
+15
+16
+0-
+#440000
+0!
+05
+06
+1-
+#460000
+1!
+15
+16
+0-
+#480000
+0!
+05
+06
+1-
+#500000
+1!
+15
+16
+0-
+#520000
+0!
+05
+06
+1-
+#540000
+1!
+15
+16
+0-
+#560000
+0!
+05
+06
+1-
+#580000
+1!
+15
+16
+0-
+#600000
+0!
+05
+06
+1-
+#620000
+1!
+15
+16
+0-
+#640000
+0!
+05
+06
+1-
+#660000
+1!
+15
+16
+0-
+#680000
+0!
+05
+06
+1-
+#700000
+1!
+15
+16
+0-
+#720000
+0!
+05
+06
+1-
+#740000
+1!
+15
+16
+0-
+#760000
+0!
+05
+06
+1-
+#780000
+1!
+15
+16
+0-
+#800000
+0!
+05
+06
+1-
+#820000
+1!
+15
+16
+0-
+#840000
+0!
+05
+06
+1-
+#860000
+1!
+15
+16
+0-
+#880000
+0!
+05
+06
+1-
+#900000
+1!
+15
+16
+0-
+#920000
+0!
+05
+06
+1-
+#940000
+1!
+15
+16
+0-
+#960000
+0!
+05
+06
+1-
+#980000
+1!
+15
+16
+0-
+#1000000
